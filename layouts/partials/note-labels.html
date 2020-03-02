@@ -8,5 +8,5 @@
             {{- $url := print "/tags/" (. | urlize) "/" -}}
             <a class="tag" href="{{- $url | relLangURL -}}">{{- . -}}</a>
         {{- end -}}
-    </p>
+    </p>   
 {{- end -}}

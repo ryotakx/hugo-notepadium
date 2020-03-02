@@ -16,6 +16,13 @@
             {{- if or (eq .Params.readingTime true) (and (not (eq .Params.readingTime false)) (eq site.Params.readingTime true)) -}}
             <span class="reading-time">{{ T "readingTime" .ReadingTime }}</span>
             {{- end -}}
+            <!-- valine reading count -->
+            {{- if .Site.Params.valine.enable -}}
+            <span id="{{ .URL | relURL }}" class="leancloud_visitors" data-flag-title="{{ .Title }}">
+                <span class="post-meta-item-text">&nbsp;&nbsp;&nbsp;&nbsp;阅读量 </span>
+                <span class="leancloud-visitors-count">1000000</span>
+            </span>
+            {{- end -}}
             {{- if .IsTranslated -}}
             <span class="langs">
                 {{- range .Translations -}}
